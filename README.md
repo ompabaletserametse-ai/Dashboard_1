@@ -1,16 +1,19 @@
 # Network Operations Centre MVP
 
-This project is a first-stage Streamlit concept demo for an AI-supported Network Operations Centre (NOC) platform. It presents fictional network data for cell sites across South Africa and focuses on network overview and site inspection only.
+This Streamlit dashboard is a fictional, mobile-friendly concept demo for a South African network operations environment. It shows an overview of 72 simulated cell sites across all nine provinces, and supports province-focused inspection of network health and service impact.
 
-## Included in this MVP
+## Included in this stage
 
-- Dark operations-dashboard styling for mobile and desktop
-- Summary cards for total, healthy, degraded, unavailable, and affected-customer counts
-- Priority panel highlighting the most urgent affected site using transparent rules
-- Search, region, technology, and status filters
-- Site inspection with all six core technical metrics
-- Clear handling of missing measurements and stale telemetry
-- Visible "Simulated network data" label throughout the experience
+- Dark operations-dashboard styling with a consistent NOC look and feel
+- National summary cards for total, healthy, degraded, unavailable, and affected-customer counts
+- Province selector that narrows the map, site list, and KPI panel to the selected province
+- Interactive South Africa map with 8 fictional sites per province (72 total)
+- Green, amber, red, and grey markers for healthy, degraded, unavailable, and stale or missing telemetry
+- Tooltip-style site detail cards on hover
+- Province-level KPI calculations for availability, latency, CPU usage, packet loss, bandwidth, error rate, and affected customers
+- Search, technology, and status filters that still work alongside the province selector
+- Site inspection details for all six metrics, plus plain-language explanations of the issue state
+- Clear "Simulated network data" labels and fictitious data only
 
 ## Run locally
 
@@ -30,10 +33,11 @@ uv run streamlit run streamlit_app.py
 ## Files
 
 - `streamlit_app.py` — Streamlit entrypoint that runs the app
-- `app.py` — dashboard logic and demo data
-- `requirements.txt` — Streamlit runtime dependencies
+- `app.py` — dashboard logic, map rendering, demo data, KPI aggregation, and inspection logic
+- `requirements.txt` — runtime dependencies
 
 ## Notes
 
-- This is a fictional concept demo and does not connect to real network systems or external AI services.
-- The sample data is intentionally consistent and designed to tell a believable operational story.
+- All data is simulated and intentionally consistent so the dashboard feels believable without connecting to a real network.
+- Province KPI averages exclude missing or stale readings from the calculations and show how many readings were used.
+- The app is designed to remain usable on a phone-sized browser viewport without requiring horizontal scrolling for the main tasks.
