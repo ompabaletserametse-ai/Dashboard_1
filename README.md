@@ -24,11 +24,12 @@ Then install dependencies and launch the app:
 
 ```bash
 uv sync
-uv run streamlit run app.py
+uv run streamlit run streamlit_app.py
 ```
 
 ## Files
 
+- `streamlit_app.py` — Streamlit entrypoint that runs the app
 - `app.py` — dashboard logic and demo data
 - `requirements.txt` — Streamlit runtime dependencies
 
