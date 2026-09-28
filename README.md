@@ -1,25 +1,38 @@
-# 🎈 Blank app template
+# Network Operations Centre MVP
 
-A simple Streamlit app template for you to modify!
+This project is a first-stage Streamlit concept demo for an AI-supported Network Operations Centre (NOC) platform. It presents fictional network data for cell sites across South Africa and focuses on network overview and site inspection only.
 
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://blank-app-template.streamlit.app/)
+## Included in this MVP
 
-### How to run it on your own machine
+- Dark operations-dashboard styling for mobile and desktop
+- Summary cards for total, healthy, degraded, unavailable, and affected-customer counts
+- Priority panel highlighting the most urgent affected site using transparent rules
+- Search, region, technology, and status filters
+- Site inspection with all six core technical metrics
+- Clear handling of missing measurements and stale telemetry
+- Visible "Simulated network data" label throughout the experience
 
-Prerequisite: install `uv` if you don't already have it.
+## Run locally
 
+Prerequisite: install `uv` if you do not already have it.
+
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
-$ curl -LsSf https://astral.sh/uv/install.sh | sh
+
+Then install dependencies and launch the app:
+
+```bash
+uv sync
+uv run streamlit run app.py
 ```
 
-1. Sync the dependencies
+## Files
 
-   ```
-   $ uv sync
-   ```
+- `app.py` — dashboard logic and demo data
+- `requirements.txt` — Streamlit runtime dependencies
 
-2. Run the app
+## Notes
 
-   ```
-   $ uv run streamlit run streamlit_app.py
-   ```
+- This is a fictional concept demo and does not connect to real network systems or external AI services.
+- The sample data is intentionally consistent and designed to tell a believable operational story.
